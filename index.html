@@ -313,7 +313,7 @@
 
   /* ---------- ROADMAP ---------- */
   .roadmap{ position:relative; margin-top:20px; }
-  .road-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; position:relative; }
+  .road-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; position:relative; max-width:700px; margin:0 auto; }
   .road-line{ position:absolute; top:46px; left:6%; right:6%; height:2px;
     background:linear-gradient(90deg,var(--blue),var(--purple),var(--cyan)); opacity:.55; }
   .road-node{ position:relative; padding-top:0; }
@@ -343,7 +343,7 @@
 
   
   /* ---------- RESUME ---------- */
-  .resume-section{ text-align:center; }
+  .resume-section{ text-align:center; padding-left:clamp(16px,3vw,40px); padding-right:clamp(16px,3vw,40px); }
   .resume-embed-wrap{ border:1px solid var(--border); border-radius:var(--r-card); overflow:hidden; margin:32px auto; background:var(--panel); max-width:860px; box-shadow:var(--shadow-3); }
   .resume-embed-wrap iframe{ width:100%; height:1100px; border:none; display:block; }
   .resume-actions{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:24px; }
@@ -675,13 +675,10 @@
         <p data-reveal style="--d:.06s; margin-top:22px">I'm <strong>Dhanush Mohanasundaram</strong>, a B.E. Electronics &amp; Communication Engineering student at <strong>Velalar College of Engineering and Technology</strong> (CGPA 8.4/10), building toward a career as a Software Development Engineer.</p>
         <p data-reveal style="--d:.12s">My focus is <strong>backend development and core engineering</strong> — Java, Python, data structures and algorithms, and system design fundamentals — sharpened through daily coding practice and hands-on projects.</p>
         <p data-reveal style="--d:.18s">I completed an <strong>AI internship at Edu-versity</strong>, exploring machine learning and Python-based workflows, and took ideas to the inter-college evaluation stage at <strong>Smart India Hackathon 2024 &amp; 2025</strong>. As an executive member of <strong>IEEE COMSOC</strong>, I stay active in the technical community.</p>
-        <p data-reveal style="--d:.24s">I'm a <strong>continuous learner with a strong problem-solving drive</strong> — laying software foundations today, moving into AI and machine learning next, and aiming to build technology that makes a real-world difference.</p>
       </div>
       <div class="focus-list" data-reveal style="--d:.1s">
         <div class="focus-item"><div class="k">Now</div><div class="t">Software Engineering</div><div class="d">Backend, DSA, and system design fundamentals.</div></div>
         <div class="focus-item"><div class="k">Next</div><div class="t">Artificial Intelligence</div><div class="d">Machine learning, deep learning, and generative AI.</div></div>
-        <div class="focus-item"><div class="k">Long-term</div><div class="t">Advanced AI Systems</div><div class="d">Intelligence at the intersection of software and hardware.</div></div>
-        <div class="focus-item"><div class="k">Vision</div><div class="t">Global Impact</div><div class="d">A technology product that changes how the world works.</div></div>
       </div>
     </div>
     <div class="github-card" data-reveal style="--d:.3s">
@@ -897,20 +894,27 @@
       <h2 data-reveal style="--d:.06s">Learning, documented.</h2>
     </div>
     <div class="cert-grid">
-      <div class="cert" data-reveal><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>Programming in Java</h4><div class="meta">NPTEL</div></div></div>
-      <div class="cert" data-reveal style="--d:.05s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>Data Analytics with Python</h4><div class="meta">NPTEL</div></div></div>
-      <div class="cert" data-reveal style="--d:.1s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>Introduction to Machine Learning</h4><div class="meta">NPTEL</div></div></div>
-      <div class="cert" data-reveal style="--d:.15s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>Introduction to Large Language Models</h4><div class="meta">NPTEL</div></div></div>
-      <div class="cert" data-reveal style="--d:.2s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>HTML &amp; CSS</h4><div class="meta">Guvi (HCL)</div></div></div>
-      <div class="cert" data-reveal style="--d:.25s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>Git</h4><div class="meta">Guvi (HCL)</div></div></div>
-      <div class="cert" data-reveal><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>AI Fundamentals</h4><div class="meta">Guvi (HCL)</div></div></div>
-      <div class="cert" data-reveal style="--d:.05s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>Java Programming</h4><div class="meta">Guvi (HCL)</div></div></div>
-      <div class="cert" data-reveal style="--d:.1s"><div class="badge" style="color:var(--blue);background:rgba(79,141,255,.12)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z"/></svg></div><div><h4>Fundamental AI Concepts</h4><div class="meta">Microsoft</div></div></div>
-      <div class="cert" data-reveal style="--d:.15s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><h4>Git &amp; GitHub</h4><div class="meta">Udemy</div></div></div>
-      <div class="cert" data-reveal style="--d:.2s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><h4>C Programming</h4><div class="meta">Udemy</div></div></div>
-      <div class="cert" data-reveal style="--d:.25s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><h4>Python Programming</h4><div class="meta">Scaler</div></div></div>
-      <div class="cert" data-reveal><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><h4>Logic Building (Programming)</h4><div class="meta">Scaler</div></div></div>
-      <div class="cert" data-reveal style="--d:.05s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div><h4>Aptitude · Problem Solving</h4><div class="meta">Aptiwings</div></div></div>
+      <!-- GUVI (HCL) -->
+      <div class="cert" data-reveal><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>React JS</h4><div class="meta">HCL GUVI &middot; May 2026</div></div></div>
+      <div class="cert" data-reveal style="--d:.05s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>JavaScript Specialist</h4><div class="meta">HCL GUVI &middot; Apr 2026</div></div></div>
+      <div class="cert" data-reveal style="--d:.1s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>HTML &amp; CSS</h4><div class="meta">HCL GUVI &middot; Jan 2026</div></div></div>
+      <div class="cert" data-reveal style="--d:.15s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>Git</h4><div class="meta">HCL GUVI &middot; Jan 2025</div></div></div>
+      <div class="cert" data-reveal style="--d:.2s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>AI Fundamentals</h4><div class="meta">HCL GUVI &middot; Aug 2025</div></div></div>
+      <!-- NPTEL -->
+      <div class="cert" data-reveal style="--d:.25s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>Programming in Java</h4><div class="meta">NPTEL &middot; Nov 2024</div></div></div>
+      <div class="cert" data-reveal><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>Data Analytics with Python</h4><div class="meta">NPTEL &middot; May 2025</div></div></div>
+      <!-- Microsoft -->
+      <div class="cert" data-reveal style="--d:.05s"><div class="badge" style="color:var(--blue);background:rgba(79,141,255,.12)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z"/></svg></div><div><h4>Fundamental AI Concepts</h4><div class="meta">Microsoft &middot; Apr 2025</div></div></div>
+      <!-- Udemy -->
+      <div class="cert" data-reveal style="--d:.1s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><h4>Git &amp; GitHub</h4><div class="meta">Udemy &middot; Jan 2026</div></div></div>
+      <div class="cert" data-reveal style="--d:.15s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><h4>C Programming</h4><div class="meta">Udemy &middot; Nov 2025</div></div></div>
+      <!-- Scaler -->
+      <div class="cert" data-reveal style="--d:.2s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><h4>Python Programming</h4><div class="meta">Scaler &middot; Dec 2024</div></div></div>
+      <!-- Sololearn -->
+      <div class="cert" data-reveal style="--d:.25s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>Java Programming (Basic)</h4><div class="meta">Sololearn &middot; Oct 2024</div></div></div>
+      <div class="cert" data-reveal><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>C Programming (Basic)</h4><div class="meta">Sololearn &middot; Sep 2024</div></div></div>
+      <!-- Aptiwings -->
+      <div class="cert" data-reveal style="--d:.05s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div><h4>Aptitude &middot; Problem Solving</h4><div class="meta">Aptiwings &middot; Sep 2024</div></div></div>
     </div>
   </section>
 
@@ -954,8 +958,6 @@
         <div class="road-line" aria-hidden="true"></div>
         <div class="road-node now"><div class="dot"></div><div class="body"><div class="stage">2026 · Now</div><div class="body-inner"><span class="num">01</span><h4>Software Engineer</h4><div class="rd">Backend, DSA, system design, and full-stack engineering.</div><div class="road-chips"><span class="chip">Java</span><span class="chip">DSA</span><span class="chip">System Design</span><span class="chip">Backend</span></div></div></div></div>
         <div class="road-node"><div class="dot"></div><div class="body"><div class="stage">Next</div><span class="num">02</span><h4>AI / ML Engineer</h4><div class="rd">Building intelligent systems with ML, deep learning, and LLMs.</div><div class="road-chips"><span class="chip">PyTorch</span><span class="chip">ML</span><span class="chip">Deep Learning</span><span class="chip">LLMs</span></div></div></div>
-        <div class="road-node"><div class="dot"></div><div class="body"><div class="stage">Future</div><span class="num">03</span><h4>Advanced AI &amp; Hardware</h4><div class="rd">Working across software and hardware on frontier AI systems.</div><div class="road-chips"><span class="chip">FPGA</span><span class="chip">Edge AI</span><span class="chip">HW/SW Co-design</span></div></div></div>
-        <div class="road-node"><div class="dot"></div><div class="body"><div class="stage">Vision</div><span class="num">04</span><h4>Technology Founder</h4><div class="rd">Building a world-changing technology product.</div><div class="road-chips"><span class="chip">Product</span><span class="chip">Architecture</span><span class="chip">Team</span><span class="chip">Vision</span></div></div></div>
       </div>
     </div>
   </section>
