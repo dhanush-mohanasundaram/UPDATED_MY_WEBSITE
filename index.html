@@ -562,8 +562,9 @@
   #preloader{ position:fixed; inset:0; z-index:200; background:var(--bg); display:grid; place-items:center;
     transition:opacity .6s ease, visibility .6s; }
   #preloader.done{ opacity:0; visibility:hidden; }
-  #preloader .pl-mark{ width:70px; height:70px; border-radius:18px; display:grid; place-items:center; overflow:hidden;
-    background:none; box-shadow:0 12px 44px -10px rgba(79,141,255,.6);
+  #preloader .pl-mark{ width:80px; height:80px; border-radius:18px; overflow:hidden;
+    background:url('dm-logo.jpg') center/cover no-repeat;
+    box-shadow:0 12px 44px -10px rgba(79,141,255,.6);
     animation:plpulse 1.4s ease-in-out infinite; }
   #preloader .pl-bar{ position:absolute; bottom:0; left:0; height:2px; width:0;
     background:linear-gradient(90deg,var(--blue),var(--purple),var(--cyan)); transition:width 1s ease; }
@@ -626,7 +627,7 @@
 <div class="grain" aria-hidden="true"></div>
 
 <div id="progress" aria-hidden="true"></div>
-<div id="preloader"><div class="pl-mark"><img src="dm-logo.jpg" alt="DM" style="width:70px;height:70px;object-fit:cover;border-radius:18px;display:block;" /></div><div class="pl-bar"></div></div>
+<div id="preloader"><div class="pl-mark"></div><div class="pl-bar"></div></div>
 <script>setTimeout(function(){var p=document.getElementById('preloader');if(p)p.classList.add('done');},2600);</script>
 <div class="cursor-ring" aria-hidden="true"></div>
 <div class="cursor-dot" aria-hidden="true"></div>
