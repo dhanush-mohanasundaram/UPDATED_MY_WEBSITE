@@ -285,14 +285,12 @@
   /* horizontal tick from line to node */
   .sg-spoke-item::before{ content:''; position:absolute; left:0; top:50%; width:18px; height:1.5px;
     background:var(--border-2); transform:translateY(-50%); }
-  .sg-node{ display:inline-flex; align-items:center; padding:8px 16px; border-radius:10px;
+  .sg-node{ display:inline-flex; flex-direction:column; padding:8px 16px; border-radius:10px;
     font-size:1.05rem; font-weight:500; color:var(--text);
     border:1px solid var(--border); background:var(--panel);
     transition:color .2s, border-color .2s, background .2s, transform .2s var(--ease); cursor:default; }
   .sg-node:hover{ color:var(--text); border-color:var(--border-2); background:var(--panel-2); transform:translateX(4px); }
-  .sg-spokes .sg-node{ margin-top:2px; }
-  /* wrap spokes as rows with connector */
-  .sg-spokes{ gap:0; }
+  .sg-proof{ font-family:var(--mono); font-size:0.72rem; color:var(--text-3); margin-top:3px; letter-spacing:.04em; font-weight:400; }
 
   @media (max-width:960px){ .skill-graph{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:600px){ .skill-graph{ grid-template-columns:1fr; } }
@@ -697,7 +695,7 @@
       <div class="stats-inner" data-reveal>
         <div class="stat"><div class="n" data-count="8.4" data-decimals="1">0</div><div class="l">CGPA / 10</div></div>
         <div class="stat"><div class="n" data-count="5" data-suffix="+">0</div><div class="l">Projects Built</div></div>
-        <div class="stat"><div class="n" data-count="14">0</div><div class="l">Certifications</div></div>
+        <div class="stat"><div class="n" data-count="15">0</div><div class="l">Certifications</div></div>
         <div class="stat"><div class="n" data-count="2" data-suffix="&#215;">0</div><div class="l">SIH Selections</div></div>
       </div>
     </div>
@@ -736,24 +734,28 @@
           <div class="sg-hub-label">Languages</div>
         </div>
         <div class="sg-spokes">
-          <div class="sg-spoke-item"><span class="sg-node">Java</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Python</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">C</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">SQL</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">JavaScript</span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Java<span class="sg-proof">NPTEL · Sololearn</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Python<span class="sg-proof">Scaler · NPTEL</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">C<span class="sg-proof">Udemy · Sololearn</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">JavaScript<span class="sg-proof">HCL GUVI · Udemy</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">SQL<span class="sg-proof">VCET</span></span></div>
         </div>
       </div>
-      <!-- Node: Web -->
+      <!-- Node: Web & Backend -->
       <div class="sg-group" id="sg-web">
         <div class="sg-hub sg-hub-blue">
           <div class="sg-hub-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div>
-          <div class="sg-hub-label">Web</div>
+          <div class="sg-hub-label">Web &amp; Backend</div>
         </div>
         <div class="sg-spokes">
-          <div class="sg-spoke-item"><span class="sg-node">HTML</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">CSS</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">React.js</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Node.js</span></div>
+          <div class="sg-spoke-item"><span class="sg-node">HTML<span class="sg-proof">HCL GUVI · Udemy</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">CSS<span class="sg-proof">HCL GUVI · Udemy</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">React.js<span class="sg-proof">HCL GUVI · React.js</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Node.js<span class="sg-proof">Udemy Bootcamp</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Express.js<span class="sg-proof">Udemy Bootcamp</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Web Development<span class="sg-proof">Udemy Bootcamp</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">REST APIs<span class="sg-proof">Udemy Bootcamp</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">MERN Stack<span class="sg-proof">Udemy Bootcamp</span></span></div>
         </div>
       </div>
       <!-- Node: Database -->
@@ -763,8 +765,10 @@
           <div class="sg-hub-label">Database</div>
         </div>
         <div class="sg-spokes">
-          <div class="sg-spoke-item"><span class="sg-node">MySQL</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Firebase</span></div>
+          <div class="sg-spoke-item"><span class="sg-node">MySQL<span class="sg-proof">VCET</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">MongoDB<span class="sg-proof">Udemy Bootcamp</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">PostgreSQL<span class="sg-proof">Udemy Bootcamp</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Firebase<span class="sg-proof">Projects</span></span></div>
         </div>
       </div>
       <!-- Node: Engineering -->
@@ -774,11 +778,12 @@
           <div class="sg-hub-label">Engineering</div>
         </div>
         <div class="sg-spokes">
-          <div class="sg-spoke-item"><span class="sg-node">Data Structures</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Algorithms</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">System Design</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Backend Dev</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Problem Solving</span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Data Structures<span class="sg-proof">VCET · Practice</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Algorithms<span class="sg-proof">VCET · Practice</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">System Design<span class="sg-proof">Self-study</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Problem Solving<span class="sg-proof">Aptiwings</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Programming Logic<span class="sg-proof">Scaler</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">OOP<span class="sg-proof">VCET · NPTEL</span></span></div>
         </div>
       </div>
       <!-- Node: Tools -->
@@ -788,11 +793,12 @@
           <div class="sg-hub-label">Tools</div>
         </div>
         <div class="sg-spokes">
-          <div class="sg-spoke-item"><span class="sg-node">Git</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">GitHub</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">VS Code</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">IntelliJ IDEA</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">PyCharm</span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Git<span class="sg-proof">HCL GUVI · Udemy</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">GitHub<span class="sg-proof">HCL GUVI · Udemy</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">VS Code<span class="sg-proof">Daily use</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">IntelliJ IDEA<span class="sg-proof">Daily use</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">PyCharm<span class="sg-proof">Daily use</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Canva<span class="sg-proof">VCET</span></span></div>
         </div>
       </div>
       <!-- Node: AI / ML -->
@@ -802,9 +808,36 @@
           <div class="sg-hub-label">AI / ML</div>
         </div>
         <div class="sg-spokes">
-          <div class="sg-spoke-item"><span class="sg-node">Artificial Intelligence</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Machine Learning</span></div>
-          <div class="sg-spoke-item"><span class="sg-node">LLM Fundamentals</span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Artificial Intelligence<span class="sg-proof">Edu-versity · HCL GUVI</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Machine Learning<span class="sg-proof">Edu-versity Internship</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Data Analytics<span class="sg-proof">NPTEL</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">LLM Fundamentals<span class="sg-proof">Microsoft</span></span></div>
+        </div>
+      </div>
+      <!-- Node: Soft Skills -->
+      <div class="sg-group" id="sg-soft">
+        <div class="sg-hub sg-hub-cyan">
+          <div class="sg-hub-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="sg-hub-label">Soft Skills</div>
+        </div>
+        <div class="sg-spokes">
+          <div class="sg-spoke-item"><span class="sg-node">Communication<span class="sg-proof">VCET · IEEE</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Team Leadership<span class="sg-proof">VCET · Projects</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Teamwork<span class="sg-proof">SIH · Projects</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Public Speaking<span class="sg-proof">VCET · Students Rep</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Project Management<span class="sg-proof">VCET · SIH</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Time Management<span class="sg-proof">Projects · SIH</span></span></div>
+        </div>
+      </div>
+      <!-- Node: Electronics -->
+      <div class="sg-group" id="sg-electronics">
+        <div class="sg-hub">
+          <div class="sg-hub-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div>
+          <div class="sg-hub-label">Electronics</div>
+        </div>
+        <div class="sg-spokes">
+          <div class="sg-spoke-item"><span class="sg-node">Basics of Electronics<span class="sg-proof">VCET (ECE Dept)</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Web3.js / DApps<span class="sg-proof">Udemy Bootcamp</span></span></div>
         </div>
       </div>
     </div>
@@ -812,7 +845,7 @@
 
   <!-- ============ SKILLS MARQUEE ============ -->
   <div class="marquee" aria-hidden="true">
-    <div class="marquee-track"><span class="m-item">Java</span><span class="m-item">Python</span><span class="m-item">C</span><span class="m-item">SQL</span><span class="m-item">JavaScript</span><span class="m-item">HTML</span><span class="m-item">CSS</span><span class="m-item">Node.js</span><span class="m-item">Express</span><span class="m-item">React</span><span class="m-item">MySQL</span><span class="m-item">Firebase</span><span class="m-item">Git</span><span class="m-item">GitHub</span><span class="m-item">DSA</span><span class="m-item">Algorithms</span><span class="m-item">Backend</span><span class="m-item">System Design</span><span class="m-item">Machine Learning</span><span class="m-item">LLMs</span><span class="m-item">Artificial Intelligence</span><span class="m-item">Java</span><span class="m-item">Python</span><span class="m-item">C</span><span class="m-item">SQL</span><span class="m-item">JavaScript</span><span class="m-item">HTML</span><span class="m-item">CSS</span><span class="m-item">Node.js</span><span class="m-item">Express</span><span class="m-item">React</span><span class="m-item">MySQL</span><span class="m-item">Firebase</span><span class="m-item">Git</span><span class="m-item">GitHub</span><span class="m-item">DSA</span><span class="m-item">Algorithms</span><span class="m-item">Backend</span><span class="m-item">System Design</span><span class="m-item">Machine Learning</span><span class="m-item">LLMs</span><span class="m-item">Artificial Intelligence</span></div>
+    <div class="marquee-track"><span class="m-item">Java</span><span class="m-item">Python</span><span class="m-item">C</span><span class="m-item">JavaScript</span><span class="m-item">HTML</span><span class="m-item">CSS</span><span class="m-item">React.js</span><span class="m-item">Node.js</span><span class="m-item">Express.js</span><span class="m-item">MERN Stack</span><span class="m-item">MySQL</span><span class="m-item">MongoDB</span><span class="m-item">PostgreSQL</span><span class="m-item">Git</span><span class="m-item">GitHub</span><span class="m-item">DSA</span><span class="m-item">Algorithms</span><span class="m-item">System Design</span><span class="m-item">Machine Learning</span><span class="m-item">Artificial Intelligence</span><span class="m-item">Data Analytics</span><span class="m-item">Problem Solving</span><span class="m-item">REST APIs</span><span class="m-item">Java</span><span class="m-item">Python</span><span class="m-item">C</span><span class="m-item">JavaScript</span><span class="m-item">HTML</span><span class="m-item">CSS</span><span class="m-item">React.js</span><span class="m-item">Node.js</span><span class="m-item">Express.js</span><span class="m-item">MERN Stack</span><span class="m-item">MySQL</span><span class="m-item">MongoDB</span><span class="m-item">PostgreSQL</span><span class="m-item">Git</span><span class="m-item">GitHub</span><span class="m-item">DSA</span><span class="m-item">Algorithms</span><span class="m-item">System Design</span><span class="m-item">Machine Learning</span><span class="m-item">Artificial Intelligence</span><span class="m-item">Data Analytics</span><span class="m-item">Problem Solving</span><span class="m-item">REST APIs</span></div>
   </div>
 
   <!-- ============ PROJECTS ============ -->
@@ -894,11 +927,11 @@
   </section>
   <div class="chapter-divider" aria-hidden="true"></div>
 
-  <!-- ============ CERTIFICATIONS ============ -->
+  <!-- ============ LICENSES & CERTIFICATIONS ============ -->
   <section id="certs" class="wrap pad">
     <div class="sec-head">
-      <div class="eyebrow" data-reveal>Credentials &middot; 14 Verified</div>
-      <h2 data-reveal style="--d:.06s">Learning, documented.</h2>
+      <div class="eyebrow" data-reveal>Credentials &middot; 15 Verified</div>
+      <h2 data-reveal style="--d:.06s">Licenses &amp; Certifications</h2>
     </div>
     <div class="cert-grid">
       <!-- GUVI (HCL) -->
@@ -922,6 +955,10 @@
       <div class="cert" data-reveal><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 7 5-3 5 3-2-7"/></svg></div><div><h4>C Programming (Basic)</h4><div class="meta">Sololearn &middot; Sep 2024</div></div></div>
       <!-- Aptiwings -->
       <div class="cert" data-reveal style="--d:.05s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div><h4>Aptitude &middot; Problem Solving</h4><div class="meta">Aptiwings &middot; Sep 2024</div></div></div>
+      <!-- Scaler Extra -->
+      <div class="cert" data-reveal style="--d:.1s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><h4>Logic Building (Programming)</h4><div class="meta">Scaler &middot; 2024</div></div></div>
+      <!-- Udemy Full-Stack Bootcamp -->
+      <div class="cert" data-reveal style="--d:.15s"><div class="badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><h4>Full-Stack Web Development Bootcamp</h4><div class="meta">Udemy &middot; 2025</div></div></div>
     </div>
   </section>
 
