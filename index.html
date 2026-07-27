@@ -292,6 +292,20 @@
   .sg-node:hover{ color:var(--text); border-color:var(--border-2); background:var(--panel-2); transform:translateX(4px); }
   .sg-proof{ font-family:var(--mono); font-size:0.72rem; color:var(--text-3); margin-top:3px; letter-spacing:.04em; font-weight:400; }
 
+  /* --- Skill tier badges --- */
+  .sg-tier{ display:inline-flex; align-items:center; gap:5px; font-family:var(--mono); font-size:0.68rem;
+    font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:2px 8px; border-radius:6px; margin-left:6px; vertical-align:middle; }
+  .sg-tier.applied{ color:#4FE3A0; background:rgba(79,227,160,.1); border:1px solid rgba(79,227,160,.3); }
+  .sg-tier.certified{ color:#4F8DFF; background:rgba(79,141,255,.1); border:1px solid rgba(79,141,255,.3); }
+  .sg-tier.learning{ color:#F5A623; background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.3); }
+
+  /* roadmap future node — dashed border + target badge */
+  .road-node.future .body{ border-style:dashed; border-color:rgba(157,123,255,.4); background:rgba(157,123,255,.03); }
+  .road-node.future .stage{ color:var(--purple); }
+  .road-node.future .road-chips .chip{ border-style:dashed; opacity:.75; }
+  .road-node.future .body::after{ content:'Target'; font-family:var(--mono); font-size:10px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--purple); display:block; margin-top:10px; opacity:.7; }
+
   @media (max-width:960px){ .skill-graph{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:600px){ .skill-graph{ grid-template-columns:1fr; } }
 
@@ -423,8 +437,8 @@
     object-fit:cover; z-index:0; pointer-events:none; filter:brightness(.72) saturate(.9) contrast(1.02); }
   .hero-scrim{ position:absolute; top:0; left:50%; transform:translateX(-50%); width:100vw; height:100%; z-index:1; pointer-events:none;
     background:
-      linear-gradient(100deg, rgba(8,8,10,.94) 0%, rgba(8,8,10,.72) 50%, rgba(8,8,10,.40) 100%),
-      linear-gradient(180deg, rgba(8,8,10,.82) 0%, rgba(8,8,10,.30) 30%, rgba(8,8,10,.36) 60%, rgba(8,8,10,.95) 100%); }
+      linear-gradient(100deg, rgba(8,8,10,.96) 0%, rgba(8,8,10,.82) 50%, rgba(8,8,10,.65) 100%),
+      linear-gradient(180deg, rgba(8,8,10,.88) 0%, rgba(8,8,10,.60) 30%, rgba(8,8,10,.65) 60%, rgba(8,8,10,.97) 100%); }
   .hero .hero-inner{ position:relative; z-index:3; }
   .hero .scroll-cue{ z-index:3; }
   .proj-link{ font-family:var(--mono); font-size:12px; color:var(--text-2); border:1px solid var(--border);
@@ -643,8 +657,7 @@
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#achievements">Awards</a>
-      <a href="#roadmap">Roadmap</a>
+      <a href="#certs">Certifications</a>
       <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -662,8 +675,7 @@
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#achievements">Awards</a>
-      <a href="#roadmap">Roadmap</a>
+      <a href="#certs">Certifications</a>
       <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
     </div>
@@ -694,7 +706,7 @@
     <div class="wrap">
       <div class="stats-inner" data-reveal>
         <div class="stat"><div class="n" data-count="8.4" data-decimals="1">0</div><div class="l">CGPA / 10</div></div>
-        <div class="stat"><div class="n" data-count="5" data-suffix="+">0</div><div class="l">Projects Built</div></div>
+        <div class="stat"><div class="n" data-count="2">0</div><div class="l">Projects Deployed</div></div>
         <div class="stat"><div class="n" data-count="15">0</div><div class="l">Certifications</div></div>
         <div class="stat"><div class="n" data-count="2" data-suffix="&#215;">0</div><div class="l">SIH Selections</div></div>
       </div>
@@ -727,6 +739,12 @@
       <p data-reveal style="--d:.12s">Core engineering today, intelligent systems tomorrow.</p>
     </div>
     <div class="skill-graph" data-reveal>
+      <!-- Tier legend -->
+      <div style="grid-column:1/-1; display:flex; gap:14px; flex-wrap:wrap; margin-bottom:8px;">
+        <span class="sg-tier applied">Applied — used in real project</span>
+        <span class="sg-tier certified">Certified — course/cert completed</span>
+        <span class="sg-tier learning">Learning — in progress</span>
+      </div>
       <!-- Node: Languages -->
       <div class="sg-group" id="sg-languages">
         <div class="sg-hub">
@@ -734,11 +752,11 @@
           <div class="sg-hub-label">Languages</div>
         </div>
         <div class="sg-spokes">
-          <div class="sg-spoke-item"><span class="sg-node">Java<span class="sg-proof">NPTEL · Sololearn</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Python<span class="sg-proof">Scaler · NPTEL</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">C<span class="sg-proof">Udemy · Sololearn</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">JavaScript<span class="sg-proof">HCL GUVI · Udemy</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">SQL<span class="sg-proof">VCET</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Java<span class="sg-tier applied">Applied</span><span class="sg-proof">NPTEL · Sololearn · RFID Project</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Python<span class="sg-tier applied">Applied</span><span class="sg-proof">Scaler · NPTEL · RoadSense AI</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">C<span class="sg-tier certified">Certified</span><span class="sg-proof">Udemy · Sololearn</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">JavaScript<span class="sg-tier certified">Certified</span><span class="sg-proof">HCL GUVI · Udemy</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">SQL<span class="sg-tier applied">Applied</span><span class="sg-proof">VCET · Projects</span></span></div>
         </div>
       </div>
       <!-- Node: Web & Backend -->
@@ -748,14 +766,13 @@
           <div class="sg-hub-label">Web &amp; Backend</div>
         </div>
         <div class="sg-spokes">
-          <div class="sg-spoke-item"><span class="sg-node">HTML<span class="sg-proof">HCL GUVI · Udemy</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">CSS<span class="sg-proof">HCL GUVI · Udemy</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">React.js<span class="sg-proof">HCL GUVI · React.js</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Node.js<span class="sg-proof">Udemy Bootcamp</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Express.js<span class="sg-proof">Udemy Bootcamp</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Web Development<span class="sg-proof">Udemy Bootcamp</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">REST APIs<span class="sg-proof">Udemy Bootcamp</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">MERN Stack<span class="sg-proof">Udemy Bootcamp</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">HTML<span class="sg-tier applied">Applied</span><span class="sg-proof">HCL GUVI · Projects</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">CSS<span class="sg-tier applied">Applied</span><span class="sg-proof">HCL GUVI · Projects</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">React.js<span class="sg-tier applied">Applied</span><span class="sg-proof">HCL GUVI · RFID Dashboard</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Node.js<span class="sg-tier applied">Applied</span><span class="sg-proof">Udemy · RFID Backend</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Express.js<span class="sg-tier applied">Applied</span><span class="sg-proof">Udemy · RFID API</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">MERN Stack<span class="sg-tier certified">Certified</span><span class="sg-proof">Udemy — HabitFlow in progress</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">REST APIs<span class="sg-tier applied">Applied</span><span class="sg-proof">RFID Project</span></span></div>
         </div>
       </div>
       <!-- Node: Database -->
@@ -765,10 +782,10 @@
           <div class="sg-hub-label">Database</div>
         </div>
         <div class="sg-spokes">
-          <div class="sg-spoke-item"><span class="sg-node">MySQL<span class="sg-proof">VCET</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">MongoDB<span class="sg-proof">Udemy Bootcamp</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">PostgreSQL<span class="sg-proof">Udemy Bootcamp</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Firebase<span class="sg-proof">Projects</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Firebase<span class="sg-tier applied">Applied</span><span class="sg-proof">RFID Project · RoadSense AI</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">MySQL<span class="sg-tier certified">Certified</span><span class="sg-proof">VCET</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">MongoDB<span class="sg-tier certified">Certified</span><span class="sg-proof">Udemy Bootcamp</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">PostgreSQL<span class="sg-tier certified">Certified</span><span class="sg-proof">Udemy Bootcamp</span></span></div>
         </div>
       </div>
       <!-- Node: Engineering -->
@@ -778,12 +795,12 @@
           <div class="sg-hub-label">Engineering</div>
         </div>
         <div class="sg-spokes">
-          <div class="sg-spoke-item"><span class="sg-node">Data Structures<span class="sg-proof">VCET · Practice</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Algorithms<span class="sg-proof">VCET · Practice</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">System Design<span class="sg-proof">Self-study</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Problem Solving<span class="sg-proof">Aptiwings</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Programming Logic<span class="sg-proof">Scaler</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">OOP<span class="sg-proof">VCET · NPTEL</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Data Structures<span class="sg-tier applied">Applied</span><span class="sg-proof">VCET · Daily practice</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Algorithms<span class="sg-tier applied">Applied</span><span class="sg-proof">VCET · Daily practice</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Problem Solving<span class="sg-tier certified">Certified</span><span class="sg-proof">Aptiwings</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">OOP<span class="sg-tier applied">Applied</span><span class="sg-proof">VCET · NPTEL · Java projects</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">System Design Fundamentals<span class="sg-tier learning">Learning</span><span class="sg-proof">Self-study, in progress</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Programming Logic<span class="sg-tier certified">Certified</span><span class="sg-proof">Scaler</span></span></div>
         </div>
       </div>
       <!-- Node: Tools -->
@@ -793,12 +810,12 @@
           <div class="sg-hub-label">Tools</div>
         </div>
         <div class="sg-spokes">
-          <div class="sg-spoke-item"><span class="sg-node">Git<span class="sg-proof">HCL GUVI · Udemy</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">GitHub<span class="sg-proof">HCL GUVI · Udemy</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">VS Code<span class="sg-proof">Daily use</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">IntelliJ IDEA<span class="sg-proof">Daily use</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">PyCharm<span class="sg-proof">Daily use</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Canva<span class="sg-proof">VCET</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Git<span class="sg-tier applied">Applied</span><span class="sg-proof">HCL GUVI · All projects</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">GitHub<span class="sg-tier applied">Applied</span><span class="sg-proof">HCL GUVI · All projects</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">VS Code<span class="sg-tier applied">Applied</span><span class="sg-proof">Daily use</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">IntelliJ IDEA<span class="sg-tier applied">Applied</span><span class="sg-proof">Java development</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">PyCharm<span class="sg-tier applied">Applied</span><span class="sg-proof">Python projects</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Canva<span class="sg-tier certified">Certified</span><span class="sg-proof">VCET</span></span></div>
         </div>
       </div>
       <!-- Node: AI / ML -->
@@ -808,10 +825,11 @@
           <div class="sg-hub-label">AI / ML</div>
         </div>
         <div class="sg-spokes">
-          <div class="sg-spoke-item"><span class="sg-node">Artificial Intelligence<span class="sg-proof">Edu-versity · HCL GUVI</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Machine Learning<span class="sg-proof">Edu-versity Internship</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Data Analytics<span class="sg-proof">NPTEL</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">LLM Fundamentals<span class="sg-proof">Microsoft</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Computer Vision (YOLOv8)<span class="sg-tier applied">Applied</span><span class="sg-proof">RoadSense AI project</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Machine Learning Fundamentals<span class="sg-tier certified">Certified</span><span class="sg-proof">Edu-versity Internship</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Artificial Intelligence<span class="sg-tier certified">Certified</span><span class="sg-proof">HCL GUVI · Microsoft</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Data Analytics<span class="sg-tier certified">Certified</span><span class="sg-proof">NPTEL</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">LangChain / LangGraph<span class="sg-tier learning">Learning</span><span class="sg-proof">Self-study, in progress</span></span></div>
         </div>
       </div>
       <!-- Node: Soft Skills -->
@@ -821,23 +839,10 @@
           <div class="sg-hub-label">Soft Skills</div>
         </div>
         <div class="sg-spokes">
-          <div class="sg-spoke-item"><span class="sg-node">Communication<span class="sg-proof">VCET · IEEE</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Team Leadership<span class="sg-proof">VCET · Projects</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Teamwork<span class="sg-proof">SIH · Projects</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Public Speaking<span class="sg-proof">VCET · Students Rep</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Project Management<span class="sg-proof">VCET · SIH</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Time Management<span class="sg-proof">Projects · SIH</span></span></div>
-        </div>
-      </div>
-      <!-- Node: Electronics -->
-      <div class="sg-group" id="sg-electronics">
-        <div class="sg-hub">
-          <div class="sg-hub-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div>
-          <div class="sg-hub-label">Electronics</div>
-        </div>
-        <div class="sg-spokes">
-          <div class="sg-spoke-item"><span class="sg-node">Basics of Electronics<span class="sg-proof">VCET (ECE Dept)</span></span></div>
-          <div class="sg-spoke-item"><span class="sg-node">Web3.js / DApps<span class="sg-proof">Udemy Bootcamp</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Communication<span class="sg-tier applied">Applied</span><span class="sg-proof">IEEE COMSOC · VCET</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Team Leadership<span class="sg-tier applied">Applied</span><span class="sg-proof">SIH Projects · Students Rep</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Public Speaking<span class="sg-tier applied">Applied</span><span class="sg-proof">VCET · Students Representative</span></span></div>
+          <div class="sg-spoke-item"><span class="sg-node">Project Management<span class="sg-tier applied">Applied</span><span class="sg-proof">VCET · SIH</span></span></div>
         </div>
       </div>
     </div>
@@ -873,7 +878,7 @@
     <article class="proj" data-reveal>
       <div class="proj-top">
         <div class="name-row"><span class="idx">02</span><h3>AI-Powered Train Traffic Control</h3></div>
-        <div class="tag-row"><span class="tag">Python</span><span class="tag">AI</span><span class="tag">Optimization</span><span class="tag">SIH 2025</span></div>
+        <div class="tag-row"><span class="tag">Python</span><span class="tag">AI</span><span class="tag">Optimization</span><span class="tag" style="color:var(--accent-amber);border-color:rgba(245,166,35,.4)">Prototype · Ideation Stage</span><span class="tag">SIH 2025</span></div>
       </div>
       <div class="proj-body">
         <div class="field"><div class="lbl">Problem</div><p>Railway networks face scheduling conflicts that limit throughput and cause cascading delays.</p></div>
@@ -886,22 +891,22 @@
 
     <article class="proj" data-reveal>
       <div class="proj-top">
-        <div class="name-row"><span class="idx">03</span><h3>Road Damage Detection</h3></div>
-        <div class="tag-row"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Computer Vision</span><span class="tag">JavaScript</span><a class="proj-link" href="https://github.com/dhanush-mohanasundaram/ROAD-DAMAGE-DETECTION" target="_blank" rel="noopener">View Repository &#8599;</a></div>
+        <div class="name-row"><span class="idx">03</span><h3>RoadSense AI — Road Damage Detection</h3></div>
+        <div class="tag-row"><span class="tag">YOLOv8n</span><span class="tag">Raspberry Pi 4</span><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Firebase</span><span class="tag">React Dashboard</span><a class="proj-link" href="https://github.com/dhanush-mohanasundaram/ROAD-DAMAGE-DETECTION" target="_blank" rel="noopener">View Repository &#8599;</a></div>
       </div>
       <div class="proj-body">
-        <div class="field"><div class="lbl">Problem</div><p>Spotting and reporting road damage manually is slow, subjective, and hard to scale.</p></div>
-        <div class="field s"><div class="lbl">Solution</div><p>A Streamlit web application that analyses road imagery for damage through an interactive browser interface, pairing a Python backend with a lightweight web UI.</p></div>
-        <div class="field i"><div class="lbl">Impact</div><p>A deployable, browser-based tool that makes road-damage detection accessible without any specialized software.</p></div>
-        <div class="field l"><div class="lbl">Lessons Learned</div><p>Wrapping a model in a clean Streamlit interface is one of the fastest ways to make ML usable for real people.</p></div>
+        <div class="field"><div class="lbl">Problem</div><p>Spotting and reporting road damage manually is slow, subjective, and hard to scale. Traditional surveying misses real-time hazards.</p></div>
+        <div class="field s"><div class="lbl">Solution</div><p>An edge AI system running YOLOv8n on a Raspberry Pi 4 with GPS and MPU6050 sensor fusion to detect and geo-tag road damage in real time, backed by a Flask API, Firebase/SQLite storage, and a React analytics dashboard.</p></div>
+        <div class="field i"><div class="lbl">Impact</div><p>Deployed end-to-end on hardware — camera + GPS + accelerometer data fused with CV inference, results pushed to a live React dashboard for municipal review.</p></div>
+        <div class="field l"><div class="lbl">Lessons Learned</div><p>Running inference on edge hardware forced tight model optimisation (YOLOv8n vs larger variants) and taught me the real cost of sensor synchronisation latency.</p></div>
       </div>
-      <div class="proj-detail"><div class="proj-detail-label">Computer Vision Pipeline</div><p>Road images are uploaded through a Streamlit file-uploader widget. The Python backend converts images to NumPy arrays, applies edge-detection and morphological operations via OpenCV, and classifies damage severity into three tiers based on contour area thresholds. Results are overlaid on the original image and returned to the Streamlit UI for instant visual feedback.</p></div>
+      <div class="proj-detail"><div class="proj-detail-label">Technical Stack</div><p>YOLOv8n runs on-device on Raspberry Pi 4. GPS (NMEA) and MPU6050 accelerometer data are fused with each inference frame. Results are serialised and POSTed to a Flask backend, persisted in Firebase Realtime DB and SQLite, and visualised in a React dashboard with heatmaps and severity filters.</p></div>
     </article>
 
     <article class="proj" data-reveal>
       <div class="proj-top">
         <div class="name-row"><span class="idx">04</span><h3>Innovative Passenger Tracking System</h3></div>
-        <div class="tag-row"><span class="tag">System Design</span><span class="tag">Public Transport</span><span class="tag">SIH 2024</span></div>
+        <div class="tag-row"><span class="tag">System Design</span><span class="tag">Public Transport</span><span class="tag" style="color:var(--accent-amber);border-color:rgba(245,166,35,.4)">Prototype · Ideation Stage</span><span class="tag">SIH 2024</span></div>
       </div>
       <div class="proj-body">
         <div class="field"><div class="lbl">Problem</div><p>Public transportation lacks clear passenger visibility and monitoring, making operations harder to manage.</p></div>
@@ -1001,7 +1006,7 @@
       <div class="road-grid">
         <div class="road-line" aria-hidden="true"></div>
         <div class="road-node now"><div class="dot"></div><div class="body"><div class="stage">2026 · Now</div><div class="body-inner"><span class="num">01</span><h4>Software Engineer</h4><div class="rd">Backend, DSA, system design, and full-stack engineering.</div><div class="road-chips"><span class="chip">Java</span><span class="chip">DSA</span><span class="chip">System Design</span><span class="chip">Backend</span></div></div></div></div>
-        <div class="road-node"><div class="dot"></div><div class="body"><div class="stage">Next</div><span class="num">02</span><h4>AI / ML Engineer</h4><div class="rd">Building intelligent systems with ML, deep learning, and LLMs.</div><div class="road-chips"><span class="chip">PyTorch</span><span class="chip">ML</span><span class="chip">Deep Learning</span><span class="chip">LLMs</span></div></div></div>
+        <div class="road-node future"><div class="dot"></div><div class="body"><div class="stage">Next</div><span class="num">02</span><h4>AI / ML Engineer</h4><div class="rd">Building intelligent systems with ML, deep learning, and LLMs.</div><div class="road-chips"><span class="chip">PyTorch</span><span class="chip">ML</span><span class="chip">Deep Learning</span><span class="chip">LLMs</span></div></div></div>
       </div>
     </div>
   </section>
